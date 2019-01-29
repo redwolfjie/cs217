@@ -33,29 +33,3 @@ __global__ void reduction(float *out, float *in, unsigned size)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
