@@ -25,7 +25,7 @@ __global__ void reduction(float *out, float *in, unsigned size)
     {
       __syncthreads();
 
-      if (t < stride )
+      if (t < stride && t + start + stride < size)
       partialSum[t]+=partialSum[t+stride];
     }
     if (t == 0)
