@@ -18,8 +18,8 @@ __global__ void reduction(float *out, float *in, unsigned size)
     __shared__ float partialSum[2*BLOCK_SIZE];
     unsigned int t = threadIdx.x;
     unsigned int start = 2*blockIdx.x*blockDim.x;
-    partialSum[t] = input[start + t];
-    partialSum[blockDim.x + t] = input[start + blockDim.x + t];
+    partialSum[t] = in[start + t];
+    partialSum[blockDim.x + t] = in[start + blockDim.x + t];
     for (unsigned int stride = 1; stride <= blockDim.x; stride *= 2)
     {
       __syncthreads();
@@ -28,7 +28,7 @@ __global__ void reduction(float *out, float *in, unsigned size)
     }
     // INSERT KERNEL CODE HERE
     if (t == 0)
-      out[blockIdx.x] = partialSum[0]
+      out[blockIdx.x] = partialSum[0];
 }
 
 
