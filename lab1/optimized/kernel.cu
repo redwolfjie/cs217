@@ -29,6 +29,6 @@ __global__ void reduction(float *out, float *in, unsigned size)
       partialSum[t]+=partialSum[t+stride];
     }
     if (t == 0)
-      out[blockIdx.x] = partialSum[0]
+      out[blockIdx.x] = partialSum[0];
 }
     // INSERT KERNEL CODE HERE
