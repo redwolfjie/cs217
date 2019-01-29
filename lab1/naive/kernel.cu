@@ -23,7 +23,7 @@ __global__ void reduction(float *out, float *in, unsigned size)
     for (unsigned int stride = 1; stride <= blockDim.x; stride *= 2)
     {
       __syncthreads();
-      if (t%stride == 0 && t + start + stride < size)
+      if (t%stride == 0 && 2*t + start + stride < size)
         partialSum[2*t]+=partialSum[2*t+stride];
     }
     // INSERT KERNEL CODE HERE
