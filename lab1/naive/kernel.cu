@@ -30,3 +30,32 @@ __global__ void reduction(float *out, float *in, unsigned size)
     if (t == 0)
       out[blockIdx.x] = partialSum[0]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
